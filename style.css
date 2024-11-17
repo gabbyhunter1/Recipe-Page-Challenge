@@ -1,0 +1,238 @@
+@font-face {
+  font-family: "YoungSerif";
+  src: url("/assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 600 700;
+}
+
+:root {
+  --color-primary-800: hsl(14, 45%, 36%);
+  --color-accent-800: hsl(332, 51%, 32%);
+  --color-accent-50: hsl(330, 100%, 98%);
+
+  --color-neutral-900: hsl(24, 5%, 18%);
+  --color-neutral-600: hsl(30, 10%, 34%);
+  --color-neutral-150: hsl(30, 54%, 90%);
+  --color-neutral-100: hsl(30, 54%, 90%);
+  --color-bg: hsl(0, 0%, 100%);
+
+  --ff-headings: "YoungSerif", sans-serif;
+  --ff-body: "Outfit", sans-serif;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  --hr-color: hsla(30, 10%, 34%, 0.2);
+  --hr-thickness: 1px;
+}
+
+/* A (more) Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.45;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* styling */
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+  background-color: var(--color-neutral-150);
+  color: var(--color-neutral-600);
+
+  display: grid;
+  place-content: center;
+}
+
+.recipe {
+  background-color: var(--color-bg);
+  border-radius: 1rem;
+  max-width: 700px;
+}
+
+@media (min-width: 750px) {
+  .recipe {
+    margin-block: 7.5rem;
+  }
+
+  .recipe__img {
+    margin-inline: 2rem;
+    padding-top: 1.75rem;
+    overflow: hidden;
+  }
+
+  .recipe__img img {
+    border-radius: 1rem;
+  }
+}
+
+.content {
+  margin-inline: 2rem;
+}
+
+.recipe__list {
+  padding: 0px;
+  margin-left: 1.4rem;
+  margin-top: 0.875rem;
+}
+
+.recipe__list-item {
+  padding-left: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.recipe__list-item::marker {
+  color: var(--color-primary-800);
+  font-size: 0.875rem;
+}
+
+.recipe__title {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-regular);
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--color-neutral-900);
+
+  margin-top: 2.7rem;
+}
+
+.highlight {
+  font-weight: var(--fw-semi-bold);
+}
+
+.recipe__description {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.recipe__preparation {
+  border-radius: 0.5rem;
+  padding: 1.25em 1.5em;
+  margin-bottom: 2rem;
+  background-color: var(--color-accent-50);
+}
+
+.recipe__preparation-title {
+  font-weight: var(--fw-semi-bold);
+  font-size: 1.3rem;
+  color: var(--color-accent-800);
+}
+
+.preparation-list .recipe__list-item::marker {
+  color: var(--color-accent-800);
+}
+
+/* .recipe__preparation-list {
+  padding: 0px;
+  margin-left: 1.4rem;
+  margin-top: 0.8rem;
+} */
+
+/* .recipe__preparation-item {
+  padding-left: 1.25rem;
+  padding-bottom: 0.5rem;
+} */
+
+.recipe__section {
+  padding-bottom: 1.75rem;
+}
+
+.recipe__section-heading {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-regular);
+  font-size: 1.75rem;
+  color: var(--color-primary-800);
+}
+
+.recipe__section:not(:last-child)::after {
+  content: "";
+  display: block;
+  background-color: var(--hr-color);
+  height: var(--hr-thickness);
+  margin-top: 2rem;
+}
+
+.instruction-list .recipe__list-item {
+  list-style-type: decimal;
+}
+
+.instruction-list .recipe__list-item::marker {
+  font-weight: var(--fw-semi-bold);
+  font-size: 1rem;
+}
+
+.recipe__nutrition-description {
+  margin-block: 1rem;
+}
+
+.recipe__nutrition-table {
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 100%;
+}
+
+.recipe__nutrition-table-header {
+  font-weight: var(--fw-regular);
+}
+
+.recipe__nutrition-table-cell {
+  font-weight: var(--fw-semi-bold);
+  color: var(--color-primary-800);
+}
+
+.recipe__nutrition-table-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 2rem;
+  padding-block: 0.625rem;
+}
+
+.recipe__nutrition-table-row:not(:last-child) {
+  border-bottom: 1px solid var(--hr-color);
+}
